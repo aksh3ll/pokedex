@@ -7,7 +7,7 @@ export type CacheEntry<T> = {
 
 export class Cache {
     #cache = new Map<string, CacheEntry<any>>();
-    #reapIntervalId: NodeJS.Timeout | undefined = undefined;
+    #reapIntervalId: ReturnType<typeof setInterval> | undefined = undefined;
     #interval: number;
 
     constructor(interval: number) {
